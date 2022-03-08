@@ -29,6 +29,11 @@ mongoose.connect(config.mongoURI, {
   
 app.get('/', (req, res) => res.send("바뀜?")) //root directory에서 출력되게
 
+//프론트에 보내기
+app.get("/api/hello", (req, res) => {
+  res.send("안녕하세요~")
+})
+
 
 //회원가입
 app.post("/api/user/register", (req, res) => {
