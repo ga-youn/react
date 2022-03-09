@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'antd/dist/antd.css'; //css framwork
 
 ReactDOM.render(
   //보여주고싶은 컴포넌트를 넣으면됨
