@@ -2,14 +2,32 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+//import * as serviceWorker from "./serviceWorker";
 import reportWebVitals from './reportWebVitals';
 import 'antd/dist/antd.css'; //css framwork
+import { Provider } from "react-redex";
+import { applyMiddleware, createStore } from 'redux';
+import promiseMiddleware from "redux-promise";
+import ReduxThunk from "redux-thunk";
+import Reducer from "./_reducer";
+
+const createStoreWithMiddlewear = applyMiddleware(promiseMiddleware, ReduxThunk)(createStore);
+
 
 ReactDOM.render(
   //보여주고싶은 컴포넌트를 넣으면됨
-  <React.StrictMode>
+  //<React.StrictMode>
+  //  <App />
+  //</React.StrictMode>
+  <Provider
+    store={createStoreWithMiddlewear(Reducer,
+        window.__REDUX_DEVTOOLS_EXTENSTION__&& //redux_extension 설치
+        window.__REDUX_DEVTOOLS_EXTENSTION__()
+      )}
+  >
+   
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
