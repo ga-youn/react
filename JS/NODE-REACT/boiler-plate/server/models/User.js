@@ -115,4 +115,4 @@ userSchema.statics.findByToken = function(token, cb){
 
 const User = mongoose.model('User', userSchema)
 
-module.exports = {User} //다른파일에서 쓸수 있게함
+module.exports = { User } //다른파일에서 쓸수 있게함

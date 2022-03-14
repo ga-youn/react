@@ -1,14 +1,19 @@
 import {
-    LOGIN_USER
+    LOGIN_USER, 
+    REGISTER_USER
 } from "../_actions/types";
 
 
 export default function(state = {}, action){
 
     switch(action.type) {
-        case LOGIN_USER : 
-            return { ...state, loginSuccess : action.payload}
 
+        case LOGIN_USER : 
+            return { ...state, loginSuccess : action.payload} //...state는 아무것도 없는 상태
+            break;
+        
+        case REGISTER_USER : 
+            return { ...state, register : action.payload}
             break;
         
         default :
