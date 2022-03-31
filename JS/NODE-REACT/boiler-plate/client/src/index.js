@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 //import * as serviceWorker from "./serviceWorker";
 import reportWebVitals from './reportWebVitals';
-import 'antd/dist/antd.css'; //css framwork
+import 'antd/dist/antd'; //css framwork
 import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from 'redux';
 import promiseMiddleware from "redux-promise";
