@@ -1,24 +1,16 @@
-import React, {useState} from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+
+// components views
+import Component from './components/LandingPage';
 
 function App() {
 
-  const [data, setData] = useState(null);
-
-  useState(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
-    </div>
+    //component는 부모요소가 감싸고 있어야함
+    <>
+      <Component /> 
+    </>
+
   );
 }
 
