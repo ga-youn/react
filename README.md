@@ -1,2 +1,2 @@
-# STUDY
-STUDY EXAMPLE
+# react study
+
